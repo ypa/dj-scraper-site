@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 # Create your views here.
 
 def scrape(request):
-    requests.get('https://wwww.google.com')
+    page = requests.get('https://www.google.com')
     soup = BeautifulSoup(page.text, 'html.parser')
 
     link_addresses = [link.get('href') for link in soup.find_all('a')]
